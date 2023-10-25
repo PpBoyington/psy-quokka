@@ -25,8 +25,8 @@ interface Section {
   href: string
 }
 const SECTIONS: Section[] = [
-  { title: 'Se connecter', href: '/livres' },
-  { title: "S'inscrire", href: '/auteurs' },
+  { title: 'Se connecter', href: '/login' },
+  { title: "S'inscrire", href: '/inscription' },
 ]
 
 const Header = () => {
@@ -86,6 +86,7 @@ const Header = () => {
                 key={section.title}
                 component={Link}
                 href={section.href}
+                sx={{ mx: 1 }}
               >
                 {section.title}
               </Button>
