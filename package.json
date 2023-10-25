@@ -1,0 +1,16 @@
+{
+  "name": "psy-quokka",
+  "packageManager": "yarn@4.0.0",
+  "workspaces": [
+    "packages/backend",
+    "packages/frontend/happy-quokka-nextjs"
+  ],
+  "scripts": {
+    "build": "yarn workspaces run build",
+    "dev": "concurrently \"yarn workspace happy-quokka-nextjs dev\" \"yarn workspace backend dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.2.2"
+  }
+}
