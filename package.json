@@ -6,11 +6,17 @@
     "packages/frontend/happy-quokka-nextjs"
   ],
   "scripts": {
-    "build": "yarn workspaces run build",
-    "dev": "concurrently \"yarn workspace happy-quokka-nextjs dev\" \"yarn workspace backend dev\""
+    "build": "yarn workspaces foreach -A run build",
+    "dev": "concurrently \"yarn workspace happy-quokka-nextjs dev\" \"yarn workspace backend dev\"",
+    "lint": "yarn workspaces foreach -A run lint"
   },
   "devDependencies": {
+    "@types/eslint": "^8",
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
     "concurrently": "^8.2.2",
+    "eslint": "^8.52.0",
+    "eslint-config-prettier": "^9.0.0",
     "typescript": "^5.2.2"
   }
 }
