@@ -1,12 +1,14 @@
 {
   "name": "psy-quokka",
   "packageManager": "yarn@4.0.0",
+  "private": true,
   "workspaces": [
     "packages/backend",
     "packages/frontend/happy-quokka-nextjs"
   ],
   "scripts": {
     "build": "yarn workspaces foreach -A run build",
+    "tsc": "yarn workspaces foreach run tsc -- --noEmit",
     "dev": "concurrently \"yarn workspace happy-quokka-nextjs dev\" \"yarn workspace backend dev\"",
     "lint": "yarn workspaces foreach -A run lint"
   },
