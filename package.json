@@ -1,6 +1,6 @@
 {
   "name": "psy-quokka",
-  "packageManager": "yarn@4.0.0",
+  "packageManager": "yarn@4.0.2",
   "private": true,
   "workspaces": [
     "packages/backend",

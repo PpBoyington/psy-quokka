@@ -12,23 +12,19 @@ services:
     container_name: happy-quokka-nextjs
     build:
       context: .
-    entrypoint: ["yarn", "workspace", "happy-quokka-nextjs", "start"]
+      dockerfile: Dockerfile.quokappy.frontend
     ports:
       - 3000:3000
-    volumes:
-      - ./:/usr/src/app
 
   api:
     container_name: api
     build:
       context: .
-    entrypoint: ["yarn", "workspace", "backend", "start"]
+      dockerfile: Dockerfile.quokappy.backend
     environment:
       NODE_ENV: production
     ports:
-      - 8080:8080
-    volumes:
-      - ./:/usr/src/app
+      - 80:80
 
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to

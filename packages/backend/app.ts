@@ -1,7 +1,7 @@
 import express from "express"
 import cors from 'cors'
 
-const PORT = 8080;
+const PORT = 80;
 const app = express()
 
 app.use(express.json())
