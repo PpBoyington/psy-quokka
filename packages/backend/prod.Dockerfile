@@ -4,5 +4,6 @@ WORKDIR /app
 COPY package.json ./
 COPY . .
 RUN yarn install
+RUN yarn build
 
-CMD ["yarn", "workspace", "backend", "start"]
+CMD ["node", "./build/app.js" ]
