@@ -20,9 +20,9 @@ jobs:
         aws-region: eu-west-3
 
     - name: Set up kubectl
-      uses: steebchen/kubectl@v1
+      uses: steebchen/kubectl@v2.0.0
       with:
-        kubeconfig: ${{ secrets.KUBECONFIG }}
+        config: ${{ secrets.KUBECONFIG }}
 
     - name: Deploy to EKS
       run: |
