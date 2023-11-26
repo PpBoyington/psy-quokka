@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-ui-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-ui
+  template:
+    metadata:
+      labels:
+        app: web-ui
+    spec:
+      containers:
+      - name: happy-quokka-nextjs
+        image: psy-quokka-web-ui
+        ports:
+        - containerPort: 3000
+        env:
+        - name: ENV_VARIABLE
+          valueFrom:
+            configMapKeyRef:
+              name: web-ui-env
+              key: ENV_VARIABLE
+        - name: NEXT_PUBLIC_ENV_VARIABLE
+          valueFrom:
+            configMapKeyRef:
+              name: web-ui-env
+              key: NEXT_PUBLIC_ENV_VARIABLE
